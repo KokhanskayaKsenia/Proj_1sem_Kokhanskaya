@@ -7,7 +7,13 @@
 # Элементы в обратном порядке:
 # Сумма элементов последней половины:
 print("Укажите размер списка N")
-N = int (input())
+N = input()
+while type(N) != int:  # Обработка исключений 1-го числа
+    try:
+        N = int(N)
+    except ValueError:
+        print("Не то ввели!")
+        N = input("Введите первое целое число: ")
 A = list(range(-N, N))
 def sumDidgits(N): # Вычисляем сумму цифр.
     sum = 0
